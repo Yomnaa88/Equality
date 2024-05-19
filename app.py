@@ -58,7 +58,7 @@ templates = {
     Output:"""
 }
 
-@app.route('/generate_text', methods=['POST'])
+@app.route('/', methods=['POST'])
 def generate_text():
     data = request.get_json()
     question = data.get('question')
