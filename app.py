@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import os
+os.system('wget https://huggingface.co/TheBloke/phi-2-GGUF/resolve/main/phi-2.Q4_K_M.gguf')
 from langchain.llms import LlamaCpp
 from langchain.callbacks.manager import CallbackManager
 from langchain.prompts import PromptTemplate
@@ -32,7 +33,7 @@ callback_manager = CallbackManager([])
 
 # Creating LlamaCpp instance
 llm = LlamaCpp(
-    model_path=os.getenv("MODEL_PATH"),  # Using environment variable for model path
+    model_path="phi-2.Q4_K_M.gguf",  # Using environment variable for model path
     temperature=0.1,
     n_gpu_layers=0,
     n_batch=1024,
