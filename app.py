@@ -11,7 +11,8 @@ nltk.download('punkt')
 app = Flask(__name__)
 
 # Download model
-os.system('wget https://huggingface.co/TheBloke/phi-2-GGUF/resolve/main/phi-2.Q4_K_M.gguf')
+if not os.path.exists('phi-2.Q4_K_M.gguf'):
+    os.system('wget https://huggingface.co/TheBloke/phi-2-GGUF/resolve/main/phi-2.Q4_K_M.gguf')
 
 # Disable GPU usage
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
@@ -83,6 +84,7 @@ def generate_text():
 
     return jsonify({"generated_text": response})
 
+
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, host='0.0.0.0', port=port)
+    port = int(os.environ.get("PORT", 8000))
+    app.run( port= 8000)
