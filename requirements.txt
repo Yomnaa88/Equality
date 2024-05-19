@@ -1,7 +1,11 @@
 flask==2.0.2
-langchain==<version>
+langchain
 matplotlib==3.4.3
 numpy==1.21.2
 nltk==3.6.5
 gensim==4.1.2
 scikit-learn==0.24.2
+llama-cpp-python
+huggingface-hub
+langchain
+langchain-experimental
