@@ -11,3 +11,4 @@ langchain
 langchain-experimental
 scipy==1.10.1
 gunicorn
+langchain-community
